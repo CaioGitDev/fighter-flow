@@ -1,0 +1,60 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pdb
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.python-version
+
+# Flask specific
+instance/
+*.db
+*.sqlite3
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Logs
+*.log
+
+# Frontend
+client/node_modules/
+client/dist/
+client/build/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# VS Code / PyCharm / JetBrains
+.vscode/
+.idea/
+*.iml
+
+# dotenv / config files
+.env
+.env.*
+*.local
