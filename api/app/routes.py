@@ -3,29 +3,31 @@ from flask_jwt_extended import jwt_required, create_access_token, get_jwt_identi
 from . import db
 from .models import User
 
-bp = Blueprint("main", __name__)
+auth_bp = Blueprint("auth", __name__)
 
-# Route to get the current user's information and check login
-@bp.route("/login", methods=["POST"])
+@auth_bp.route("/login", methods=["POST"])
 def login():
   data = request.get_json()
-  username = data.get("username")
+  email = data.get("email")
   password = data.get("password")
+  
+  if not email or not password:
+      return jsonify({"error": "Email e senha são obrigatórios"}), 400
 
-  user = User.query.filter_by(username=username).first()
+  user = User.query.filter_by(email=email).first()
   if user and user.check_password(password):
-      token = create_access_token(identity={"id": user.id, "username": user.username})
+      token = create_access_token(identity=str(user.id))
       return jsonify({"access_token": token}), 200
 
   return jsonify({"error": "Credenciais inválidas"}), 401
 
 
 # Route to get the current user's information
-@bp.route("/user", methods=["GET"])
+@auth_bp.route("/user", methods=["GET"])
 @jwt_required()
 def get_user():
-  current_user = get_jwt_identity()
-  user = User.query.get(current_user["id"])
+  user_id = get_jwt_identity()
+  user = User.query.get(int(user_id))
   if user:
       return jsonify({"username": user.username, "email": user.email}), 200
 
