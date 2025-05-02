@@ -13,6 +13,6 @@
 * .\venv\Scripts\Activate
 
 Comando	Função
-flask db init	              Inicializa o diretório de migrations (apenas 1x no início do projeto)
+flask db init	              Inicializa o diretório de migrations (apenas 1x no início do projeto) - SO EXECUTAR UMA UNICA VEZ
 flask db migrate -m "..."	  Gera o script com base nas alterações feitas nos modelos (models.py)
 flask db upgrade	          Aplica o script (as alterações) à base de dados
