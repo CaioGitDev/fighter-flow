@@ -1,3 +1,17 @@
+### Instalar o git
+* https://git-scm.com/downloads/win
+
+## verificar instalação do git
+* git -v
+
+## clonar repositorio
+* git clone https://github.com/CaioGitDev/fighter-flow.git
+
+## enter na pasta
+* cd .\fighter-flow\
+
+## abrir visual studio
+* code .
 
 ### instalar dependencias
 * pip install -r requirements.txt

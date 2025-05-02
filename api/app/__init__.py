@@ -18,9 +18,9 @@ def create_app():
     jwt.init_app(app)
     migrate.init_app(app, db)
 
-    # Importa o blueprint depois de inicializar o app
-    from app.routes import auth_bp
-    app.register_blueprint(auth_bp, url_prefix="/api")
+    # Importa e registra as rotas
+    from .routes import register_routes
+    register_routes(app)
 
     with app.app_context():
         from . import models
