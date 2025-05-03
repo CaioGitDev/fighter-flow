@@ -75,4 +75,4 @@ class FightResult(db.Model):
     created_at = db.Column(db.DateTime, nullable=False, default=db.func.current_timestamp())
     updated_at = db.Column(db.DateTime, nullable=False, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp())
     fight = db.relationship('Fight', backref=db.backref('results', lazy=True))
-    winner = db.relationship('Fighter', foreign_keys=[winner_id], backref=db.backref('wins', lazy=True))
+    winner = db.relationship('Fighter', foreign_keys=[winner_id], backref=db.backref('won_fights', lazy=True))
