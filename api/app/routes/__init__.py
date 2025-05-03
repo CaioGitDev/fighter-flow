@@ -1,7 +1,10 @@
 from .auth_routes import auth_bp
 from .user_routes import user_bp
+from .team_routes import team_bp
+
 
 # registar as rotas criadas 
 def register_routes(app):
-  app.register_blueprint(user_bp, url_prefix="/api")
-  app.register_blueprint(auth_bp, url_prefix="/api")
+    app.register_blueprint(user_bp, url_prefix="/api")
+    app.register_blueprint(auth_bp, url_prefix="/api")
+    app.register_blueprint(team_bp, url_prefix="/api")
