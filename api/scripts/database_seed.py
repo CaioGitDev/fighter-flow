@@ -5,7 +5,7 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from app import create_app, db
-from app.models import User, Country, Team
+from app.models import User, Country, Team, Fighter, Fight, FightResult
 
 app = create_app()
 
@@ -52,6 +52,34 @@ def add_default_teams():
       db.session.commit()
       print("✔ Teams added.")
 
+def add_default_fighters():
+  with app.app_context():
+      teams = Team.query.all()
+      if not teams:
+          print("Nenhuma equipa encontrada. Corre a função de equipas primeiro.")
+          return
+
+      fighters = [
+          {"first_name": "Ricado", "last_name": "silva", "nickname": "the wall", "weight": "53.5", "team_id": teams[0].id, "wins": 0, "losses":  0, "draws": 0},
+          {"first_name": "andre", "last_name": "moreira", "nickname": "kong", "weight": "53.5", "team_id": teams[1].id, "wins": 0, "losses":  0, "draws": 0},
+          
+      ]
+
+      for fighter in fighters:
+          new_fighter = Fighter(
+              first_name=fighter["first_name"],
+              last_name=fighter["last_name"],
+              nickname=fighter["nickname"],
+              weight=fighter["weight"],
+              team_id=fighter["team_id"],
+              wins=fighter["wins"],
+              losses=fighter["losses"],
+              draws=fighter["draws"]
+          )
+          db.session.add(new_fighter)
+
+      db.session.commit()
+      print("✔ Fighters added.")
 
 def clear_database():
   with app.app_context():
@@ -64,4 +92,5 @@ if __name__ == "__main__":
   add_default_user()
   add_default_countries()
   add_default_teams()
+  add_default_fighters()
   print("Database seeded com sucesso.")

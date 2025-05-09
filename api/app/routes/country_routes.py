@@ -130,7 +130,6 @@ def delete_country(country_id):
     if not country:
         return jsonify({"error": "Country not found"}), 404
     
-   
     # If everything is ok delete the country 
     db.session.delete(country)
     db.session.commit()
