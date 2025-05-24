@@ -1,0 +1,1 @@
+// Script base para funcionalidades comuns
