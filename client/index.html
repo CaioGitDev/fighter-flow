@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -9,26 +10,69 @@
 </head>
 <body>
   <header>
-    <h1>Fighter Flow</h1>
+    <div class="logo">FJ</div>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="atletas.html">Atletas</a>
       <a href="evento.html">Eventos</a>
-      <a href="login.html">Login</a>
+      <a href="bilheteira.html">Bilheteira</a>
+      <a href="atletas.html">Atletas</a>
+      <a href="sobre.html">Sobre Nós</a>
     </nav>
+    <div class="lang-selector">PT ▼</div>
   </header>
 
   <main>
-    <section id="destaque">
-      <h2>Próximo Evento</h2>
-      <p>SFN: Salvaterra Fight Night - 17 Maio 2025</p>
+    <section class="destaque">
+      <div class="noticia-principal">
+        <img src="./assets/img/fight-main.jpg" alt="Luta em destaque" />
+        <div class="texto">
+          <h2>Resultados Friday Fights 107 – Ortikov domina Dedduang</h2>
+          <p>Vero finaliza Junior e conquista a primeira vitória no ONE</p>
+          <a href="#">Mais</a>
+        </div>
+      </div>
+      <div class="evento-proximo">
+        <p><strong>SÁBADO | 17 MAIO 2025 - 17:00</strong></p>
+        <h3>SFN: SALVATERRA FIGHT NIGHT</h3>
+        <p>Disputas imperdíveis Muay Thai e K1 e tão esperada disputa do cinturão dourado Yuri vs Carapinha</p>
+        <button onclick="window.location.href='bilheteira.html'">Bilhetes</button>
+        <div class="countdown">COMING SOON<br>27 : 14 : 31</div>
+      </div>
+    </section>
+
+    <section class="noticias-secundarias">
+      <article><img src="./assets/img/f1.jpg"><p>Resultados do Friday Fights 107 - Ortikov domina Dedduang</p></article>
+      <article><img src="./assets/img/f2.jpg"><p>Combates eletrizantes de Muay Thai e MMA aqueceram os holofotes</p></article>
+      <article><img src="./assets/img/f3.jpg"><p>Tye Ruotolo obteve uma vitória decisiva por estrangulamento</p></article>
+    </section>
+
+    <section class="atletas">
+      <h2>Atletas</h2>
+      <div class="grid">
+        <div><img src="./assets/img/a1.jpg"><p>Nong-O</p></div>
+        <div><img src="./assets/img/a2.jpg"><p>Aaron Canarte</p></div>
+        <div><img src="./assets/img/a3.jpg"><p>Roman Kryklia</p></div>
+        <div><img src="./assets/img/a4.jpg"><p>Angela Lee</p></div>
+      </div>
+    </section>
+
+    <section class="resultados">
+      <h2>Últimos Resultados</h2>
+      <div class="grid">
+        <div><img src="./assets/img/a1.jpg"><p>Nong-O</p></div>
+        <div><img src="./assets/img/a2.jpg"><p>Aaron Canarte</p></div>
+        <div><img src="./assets/img/a3.jpg"><p>Roman Kryklia</p></div>
+        <div><img src="./assets/img/a4.jpg"><p>Angela Lee</p></div>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Fighter Flow</p>
+    <p>&copy; 2025 FIGHTER FLOW. All Rights Reserved.</p>
+    <p>
+      <a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a>
+    </p>
   </footer>
 
-  <script src="./js/main.js"></script>
+  <script src="./js/main.js" type="module"></script>
 </body>
 </html>
