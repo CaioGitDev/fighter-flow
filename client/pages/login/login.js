@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (result) {
       console.log('Login successful');
       // Redirect to the main page or perform other actions
-      window.location.href = 'index.html';
+      window.location.href = '../../index.html';
     } else {
       // Show an error message to the user
       errorMessage.textContent = 'Invalid email or password. Please try again.';

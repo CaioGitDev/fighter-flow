@@ -29,9 +29,14 @@ export class LoginService {
 
   }
 
+  isLoggedIn() {
+    const token = localStorage.getItem('token');
+    return token !== null && token !== '';
+  }
+
   logout() {
     localStorage.removeItem('token');
-    window.location.href = 'login.html'; // Redirect to login page
+    window.location.href = './pages/login/index.html'; // Redirect to login page
   }
 
   validateEmail(email) {

@@ -4,3 +4,10 @@
   /* add filter to change color to white */
   filter: invert(1);
 }
+
+.nav-link {
+  color: var(--template-primary-color) !important;
+}
+.nav-link:hover {
+  color: var(--text-color) !important;
+}
