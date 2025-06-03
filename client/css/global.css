@@ -1,17 +1,18 @@
 /* roboto */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,500;1,500&display=swap');
 
 :root {
   --template-primary-color: #ffcc01;
   --secondary-color: #292a2f;
   --text-color: #ffffff;
-  --font-body: 'Roboto', sans-serif !important;
+  --font-body: 'Roboto Condensed', sans-serif !important;
 }
 
 body {
   margin: 0;
   font-family: var(--font-body);
-  background-color: #ffffff;
   color: var(--text-color);
 }
 
