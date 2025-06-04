@@ -19,9 +19,20 @@ def serialize_fighter(fighter):
         "wins": fighter.wins,
         "losses": fighter.losses,
         "draws": fighter.draws,
+        "active": fighter.active,
         "created_at": fighter.created_at,
-        "updated_at": fighter.updated_at
+        "updated_at": fighter.updated_at,
+        "team": {
+            "id": fighter.team.id,
+            "name": fighter.team.name,
+            "country_id": fighter.team.country_id,
+            "country": {
+                "id": fighter.team.country.id,
+                "name": fighter.team.country.name
+            } if fighter.team.country else None,
+        } if fighter.team else None
     }
+
 
 
 def get_fighter_by_id(fighter_id):
