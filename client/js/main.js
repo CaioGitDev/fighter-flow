@@ -27,17 +27,35 @@ async function buildFighterCards() {
 
   const container = document.getElementById('fighter-cards-container');
 
-  console.log('Fighters fetched:', fighters);
-
+  const maxFighters = 4;
+  const imagePathTemplate = 'assets/imagens/f{number}.jpg';
   fighters.forEach(fighter => {
     const fullName = fighter.first_name + ' ' + fighter.last_name;
 
-    const card = new FighterSimpleCard(fullName.toLocaleUpperCase(), "assets/imagens/1.jpg").render();
+    if (container.children.length >= maxFighters) {
+      return; // Limita a 4 cards
+    }
+
+    const imageRandomNumber = Math.floor(Math.random() * 4) + 1; // Gera um número aleatório entre 1 e 4
+    const imagePath = imagePathTemplate.replace('{number}', imageRandomNumber);
+
+    const card = new FighterSimpleCard(fullName.toLocaleUpperCase(), imagePath).render();
     container.appendChild(card);
   });
+}
+
+function scrollToTop() {
+  const scrollToTopElem = document.querySelector('#site-footer .scroll-to-top');
+  if (scrollToTopElem) {
+    scrollToTopElem.addEventListener('click', () => {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    });
+  }
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
   addDynamicLinks();
   buildFighterCards();
+  scrollToTop();
 });

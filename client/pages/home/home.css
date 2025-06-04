@@ -5,6 +5,16 @@
   filter: invert(1);
 }
 
+.logo-gold {
+  /* add filter to change color to gold */
+   filter: invert(1);
+}
+
+.gold-icon {
+  /* add filter to change color to gold */
+   filter: invert(1);
+}
+
 .nav-link {
   color: var(--template-primary-color) !important;
 }
