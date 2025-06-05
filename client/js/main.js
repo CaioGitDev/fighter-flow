@@ -23,7 +23,7 @@ function addDynamicLinks() {
 
 async function buildFighterCards() {
   const fighterService = new FighterService(baseUrl);
-  const { data: fighters } = await fighterService.getFightersAsync();
+  const { data: fighters } = await fighterService.getAsync();
 
   const container = document.getElementById('fighter-cards-container');
 
