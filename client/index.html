@@ -24,7 +24,7 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="http://127.0.0.1:5501/client/index.html">
           <img src="./assets/imagens/logo.png" width="45" height="37" alt="Fighter Flow Logo" class="logo">
         </a>
 
@@ -33,21 +33,20 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul class="navbar-nav ">
+         <ul class="navbar-nav ">
             <li class="nav-item">
-              <a class="nav-link" href="#">EVENTOS</a>
+              <a class="nav-link" id="link-eventos" href="#">EVENTOS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./pages/figthers/index.html">ATLETAS</a>
+              <a class="nav-link" id="link-atletas" href="#">ATLETAS</a>
             </li>
 
             <div id="dynamic-links" class="navbar-nav ms-auto">
-              <!-- Dynamic links will be inserted here -->
               <li class="nav-item">
-                <a class="nav-link" href="./pages/login/index.html" id="login-link">GESTÃO</a>
+                <a class="nav-link" id="link-gestao" href="#">GESTÃO</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./pages/login/index.html" id="login-link">LOGIN</a>
+                <a class="nav-link" id="link-login" href="#">LOGIN</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-muted" href="#" id="logout-link" style="display: none;">LOGOUT</a>
@@ -293,6 +292,7 @@
   </footer>
 
   <script src="./js/main.js" type="module"></script>
+  <script src="./js/router.js"></script>
 </body>
 
 </html>

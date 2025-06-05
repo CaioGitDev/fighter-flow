@@ -122,6 +122,15 @@ def update_team(team_id):
         return jsonify({"error": "Fields are required"}), 400
     
     # se estiver tudo ok atualiza a equipa 
+    try:
+        team.name = name
+        team.country_id = country_id
+        team.coach_name = coach_name
+        db.session.commit()
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({"error": "Error updating team"}), 500
+    
     # retornar a equipa atualizada com os seguintes atributos: 
     # id, nome, id do pais, nome do treinador, data de criação e data de atualização
 

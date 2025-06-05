@@ -6,7 +6,7 @@ const baseUrl = 'http://127.0.0.1:5000';
 const loginService = new LoginService(baseUrl);
 
 function addDynamicLinks() {
-  const loginLink = document.getElementById('login-link');
+  const loginLink = document.getElementById('link-login');
   const logoutLink = document.getElementById('logout-link');
 
   if (loginService.isLoggedIn()) {

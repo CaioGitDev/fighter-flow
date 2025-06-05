@@ -1,19 +1,12 @@
-
-/**
- * FighterService is a service that provides methods to interact with the fighter data.
- * It can be used to fetch, create, update, and delete fighter information.
- */
-export class FighterService {
-
+export class TeamService {
   constructor(baseUrl) {
     this.baseUrl = baseUrl;
     this.token = localStorage.getItem('token');
   }
 
- 
   async getAsync() {
     try {
-      const response = await fetch(`${this.baseUrl}/api/fighters`, {
+      const response = await fetch(`${this.baseUrl}/api/teams`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -22,63 +15,63 @@ export class FighterService {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to fetch fighters');
+        throw new Error('Failed to fetch teams');
       }
 
       return await response.json();
     } catch (error) {
-      console.error('Error fetching fighters:', error);
+      console.error('Error fetching teams:', error);
       return [];
     }
   }
 
-  async createAsync(fighterData) {
+  async createAsync(teamData) {
     try {
-      const response = await fetch(`${this.baseUrl}/api/fighter`, {
+      const response = await fetch(`${this.baseUrl}/api/team`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${this.token}`
         },
-        body: JSON.stringify(fighterData)
+        body: JSON.stringify(teamData)
       });
 
       if (!response.ok) {
-        throw new Error('Failed to create fighter');
+        throw new Error('Failed to create team');
       }
 
       return await response.json();
     } catch (error) {
-      console.error('Error creating fighter:', error);
+      console.error('Error creating team:', error);
       return null;
     }
   }
 
-  async updateAsync(fighterId, fighterData) {
+  async updateAsync(teamId, teamData) {
     try {
-      const response = await fetch(`${this.baseUrl}/api/fighter/${fighterId}`, {
+      const response = await fetch(`${this.baseUrl}/api/team/${teamId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${this.token}`
         },
-        body: JSON.stringify(fighterData)
+        body: JSON.stringify(teamData)
       });
 
       if (!response.ok) {
-        throw new Error('Failed to update fighter');
+        throw new Error('Failed to update team');
       }
 
       return await response.json();
     } catch (error) {
-      console.error('Error updating fighter:', error);
+      console.error('Error updating team:', error);
       return null;
     }
   }
 
-  async deleteAsync(fighterId) {
+  async deleteAsync(teamId) {
     try {
-      const response = await fetch(`${this.baseUrl}/api/fighter/${fighterId}`, {
+      const response = await fetch(`${this.baseUrl}/api/team/${teamId}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -87,15 +80,13 @@ export class FighterService {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to delete fighter');
+        throw new Error('Failed to delete team');
       }
 
       return await response.json();
     } catch (error) {
-      console.error('Error deleting fighter:', error);
+      console.error('Error deleting team:', error);
       return null;
     }
   }
-
-
 }
