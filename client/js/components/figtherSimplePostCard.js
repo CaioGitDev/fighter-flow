@@ -35,7 +35,7 @@ export class FighterSimplePostCard {
     img.className = "attachment-medium size-medium";
     img.sizes = "320px";
     img.decoding = "async";
-    img.onclick = () => window.openAthleteDetails(this.id);
+    img.onclick = async () => await window.openAthleteDetails(this.id);
 
     imageLink.appendChild(img);
 
@@ -45,7 +45,7 @@ export class FighterSimplePostCard {
 
     const titleLink = document.createElement("a");
     titleLink.className = "title text-center";
-    titleLink.onclick = () => window.openAthleteDetails(this.id);
+    titleLink.onclick = async() => await window.openAthleteDetails(this.id);
 
     const title = document.createElement("h3");
     title.textContent = this.fullName;

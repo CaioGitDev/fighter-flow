@@ -14,12 +14,81 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
 
+    <!-- ... -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+  <!-- DevExtreme theme -->
+  <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/23.1.15/css/dx.material.teal.dark.css">
+
+  <!-- DevExtreme libraries (reference only one of them) -->
+  <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/23.1.15/js/dx.all.js"></script>
+
   <link rel="stylesheet" href="../../css/global.css">
   <link rel="stylesheet" href="../home/home.css">
 
+  <style>
+    .fighter-popup-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.fighter-popup-left {
+  flex: 1 1 220px;
+  max-width: 250px;
+}
+
+.fighter-popup-left img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.fighter-popup-right {
+  flex: 2 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fighter-popup-right h2 {
+  margin-bottom: 0;
+  font-size: 1.5rem;
+}
+
+.fighter-popup-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 8px 16px;
+  font-size: 0.95rem;
+  margin-top: 10px;
+}
+
+.fighter-popup-meta div {
+  font-weight: bold;
+}
+
+.fighter-popup-bio {
+  margin-top: 20px;
+}
+
+.fighter-popup-bio h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.fighter-popup-bio p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+  </style>
 </head>
 
 <body>
+
+  <div id="fighter-details-popup"></div>
 
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">

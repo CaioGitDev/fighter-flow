@@ -32,6 +32,25 @@ export class FighterService {
     }
   }
 
+  async getByIdAsync(fighterId) {
+    try {
+      const response = await fetch(`${this.baseUrl}/api/fighter/${fighterId}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${this.token}`
+        }
+      });
+      if (!response.ok) {
+        throw new Error('Failed to fetch fighter');
+      }
+      return await response.json();
+    } catch (error) {
+      console.error('Error fetching fighter:', error);
+      return null;
+    }
+  }
+
   async createAsync(fighterData) {
     try {
       const response = await fetch(`${this.baseUrl}/api/fighter`, {
